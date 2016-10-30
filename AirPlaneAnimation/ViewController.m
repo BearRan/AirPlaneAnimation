@@ -31,7 +31,7 @@
     bgGradientView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:bgGradientView];
     
-    TopBarGradientView *topBarGradientView = [[TopBarGradientView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 180)];
+    TopBarGradientView *topBarGradientView = [[TopBarGradientView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 90)];
     topBarGradientView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:topBarGradientView];
     

@@ -8,7 +8,37 @@
 
 #import "TopBarGradientView.h"
 
+@interface TopBarGradientView ()
+{
+    UILabel *_titleLabel;
+}
+
+@end
+
 @implementation TopBarGradientView
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        [self createUI];
+    }
+    
+    return self;
+}
+
+- (void)createUI
+{
+    _titleLabel = [UILabel new];
+    _titleLabel.text = @"ZOOM TO SELECT SEAT";
+    _titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:16];
+    _titleLabel.textColor = UIColorFromHEX(0xD8D8D8);
+    [_titleLabel sizeToFit];
+    [self addSubview:_titleLabel];
+    
+    [_titleLabel BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+}
 
 - (void)drawRect:(CGRect)rect
 {
@@ -31,13 +61,15 @@
     CGFloat linearGradient1Locations[] = {0, 1};
     CGGradientRef linearGradient1 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)@[(id)gradientColor.CGColor, (id)gradientColor2.CGColor], linearGradient1Locations);
     
+    
+    CGFloat halfWidth = self.width / 2.0;
     //// bar Drawing
-    UIBezierPath* barPath = [UIBezierPath bezierPathWithRect: CGRectMake(0, 0, 750, 180)];
+    UIBezierPath* barPath = [UIBezierPath bezierPathWithRect: self.bounds];
     CGContextSaveGState(context);
     [barPath addClip];
     CGContextDrawLinearGradient(context, linearGradient1,
-                                CGPointMake(375, 0),
-                                CGPointMake(375, 180),
+                                CGPointMake(halfWidth, 0),
+                                CGPointMake(halfWidth, self.height),
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     CGContextRestoreGState(context);
     
