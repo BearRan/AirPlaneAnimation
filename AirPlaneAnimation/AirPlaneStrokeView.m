@@ -13,17 +13,32 @@
 {
     CAShapeLayer *_airPlaneLeftShapeLayer;
     CAShapeLayer *_airPlaneRightShapeLayer;
+    
+    CGFloat _animationDuring;
+    CGFloat _airPlaneOriginPathWidth;
+    CGFloat _airPlaneOriginPathHeight;
+    CGFloat _bezierPathScaleRatio;
 }
 
 @end
 
 @implementation AirPlaneStrokeView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithWidth:(CGFloat)width
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     
     if (self) {
+        
+        _animationDuring            = 3.6;
+        _airPlaneOriginPathWidth    = 272.75 * 2;
+        _airPlaneOriginPathHeight   = 500;
+        _bezierPathScaleRatio       = 1.0 * width / _airPlaneOriginPathWidth;
+        
+        [self BearSetSizeRemainWHRatio_referWidth:[NSNumber numberWithFloat:_airPlaneOriginPathWidth]
+                                      referHeight:[NSNumber numberWithFloat:_airPlaneOriginPathHeight]
+                                          setSort:kSetNeed_Width
+                                         setValue:[NSNumber numberWithFloat:width]];
         
         _airPlaneLeftShapeLayer = [CAShapeLayer layer];
         _airPlaneLeftShapeLayer.fillColor = [UIColor clearColor].CGColor;
@@ -52,7 +67,7 @@
     
     strokeEnd.fromValue = [NSNumber numberWithFloat:0];
     strokeEnd.toValue = [NSNumber numberWithFloat:1];
-    strokeEnd.duration = 3.6;
+    strokeEnd.duration = _animationDuring;
     [_airPlaneLeftShapeLayer addAnimation:strokeEnd forKey:@"airPlaneLeftAnimation"];
 }
 
@@ -62,7 +77,7 @@
     
     strokeEnd.fromValue = [NSNumber numberWithFloat:0];
     strokeEnd.toValue = [NSNumber numberWithFloat:1];
-    strokeEnd.duration = 3.6;
+    strokeEnd.duration = _animationDuring;
     [_airPlaneRightShapeLayer addAnimation:strokeEnd forKey:@"airPlaneRightAnimation"];
 }
 
@@ -70,7 +85,7 @@
 - (CGPathRef)airPlaneLeftPath
 {
     BearBezierPath* pathPath = BearBezierPath.bezierPath;
-    pathPath.scaleRatio = 0.5;
+    pathPath.scaleRatio = _bezierPathScaleRatio;
     [pathPath moveToPoint: CGPointMake(273.96, 1)];
     [pathPath addCurveToPoint: CGPointMake(246.71, 64.93) controlPoint1: CGPointMake(265.76, 1) controlPoint2: CGPointMake(246.71, 41.78)];
     [pathPath addLineToPoint: CGPointMake(246.71, 176.03)];
@@ -100,7 +115,7 @@
 - (CGPathRef)airPlaneRightPath
 {
     BearBezierPath* pathPath = BearBezierPath.bezierPath;
-    pathPath.scaleRatio = 0.5;
+    pathPath.scaleRatio = _bezierPathScaleRatio;
     pathPath.offSetPoint = CGPointMake(274 * pathPath.scaleRatio, 0);
     
     [pathPath moveToPoint: CGPointMake(0.3, 1)];

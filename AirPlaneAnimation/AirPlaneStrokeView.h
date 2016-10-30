@@ -10,4 +10,6 @@
 
 @interface AirPlaneStrokeView : UIView
 
+- (instancetype)initWithWidth:(CGFloat)width;
+
 @end

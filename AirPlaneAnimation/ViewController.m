@@ -23,9 +23,11 @@
 
 - (void)createUI
 {
-    AirPlaneStrokeView *airPlaneStrokeView = [[AirPlaneStrokeView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+    AirPlaneStrokeView *airPlaneStrokeView = [[AirPlaneStrokeView alloc] initWithWidth:300];
     airPlaneStrokeView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:airPlaneStrokeView];
+    
+    [airPlaneStrokeView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
 }
 
 - (void)didReceiveMemoryWarning {
