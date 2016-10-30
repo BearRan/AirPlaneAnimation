@@ -7,6 +7,7 @@
 //
 
 #import "BgGradientView.h"
+#import "AppConstant.h"
 
 @implementation BgGradientView
 
@@ -36,12 +37,12 @@
     CGGradientRef linearGradient1 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)@[(id)gradientColor3.CGColor, (id)gradientColor4.CGColor], linearGradient1Locations);
     
     //// path-2 Drawing
-    UIBezierPath* path2Path = [UIBezierPath bezierPathWithRect: CGRectMake(-4, -16, 760.46, 1349)];
+    UIBezierPath* path2Path = [UIBezierPath bezierPathWithRect: CGRectMakeBaseIn6(-4, -16, 760.46, 1349)];
     CGContextSaveGState(context);
     [path2Path addClip];
     CGContextDrawLinearGradient(context, linearGradient1,
-                                CGPointMake(557.27, -16),
-                                CGPointMake(63.01, 1333),
+                                CGPointMakeBaseIn6(557.27, -16),
+                                CGPointMakeBaseIn6(63.01, 1333),
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     CGContextRestoreGState(context);
     
@@ -55,12 +56,12 @@
     CGFloat ovalWidthHalf = ovalWidth / 2.0;
     CGFloat ovalHeightHalf = ovalHeight / 2.0;
     
-    UIBezierPath* oval2Path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(ovalX, ovalY, ovalWidth, ovalHeight)];
+    UIBezierPath* oval2Path = [UIBezierPath bezierPathWithOvalInRect: CGRectMakeBaseIn6(ovalX, ovalY, ovalWidth, ovalHeight)];
     CGContextSaveGState(context);
     [oval2Path addClip];
     CGContextDrawRadialGradient(context, radialGradient4,
-                                CGPointMake(ovalX + ovalWidthHalf, ovalY + ovalHeightHalf), 0,
-                                CGPointMake(ovalX + ovalWidthHalf, ovalY + ovalHeightHalf), ovalWidthHalf,
+                                CGPointMakeBaseIn6(ovalX + ovalWidthHalf, ovalY + ovalHeightHalf), 0,
+                                CGPointMakeBaseIn6(ovalX + ovalWidthHalf, ovalY + ovalHeightHalf), ovalWidthHalf,
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     CGContextRestoreGState(context);
     
