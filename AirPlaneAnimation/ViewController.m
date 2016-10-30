@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AirPlaneStrokeView.h"
+#import "BgGradientView.h"
 
 @interface ViewController ()
 
@@ -23,8 +24,14 @@
 
 - (void)createUI
 {
-    AirPlaneStrokeView *airPlaneStrokeView = [[AirPlaneStrokeView alloc] initWithWidth:300];
-    airPlaneStrokeView.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    BgGradientView *bgGradientView = [[BgGradientView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+    bgGradientView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:bgGradientView];
+    
+    AirPlaneStrokeView *airPlaneStrokeView = [[AirPlaneStrokeView alloc] initWithWidth:WIDTH];
+    airPlaneStrokeView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:airPlaneStrokeView];
     
     [airPlaneStrokeView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
