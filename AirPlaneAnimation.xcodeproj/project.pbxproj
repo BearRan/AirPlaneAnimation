@@ -13,6 +13,8 @@
 		18722C9C1DC5D2E400135FC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18722C9A1DC5D2E400135FC4 /* Main.storyboard */; };
 		18722C9E1DC5D2E400135FC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18722C9D1DC5D2E400135FC4 /* Assets.xcassets */; };
 		18722CA11DC5D2E400135FC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18722C9F1DC5D2E400135FC4 /* LaunchScreen.storyboard */; };
+		18722CAA1DC5D54300135FC4 /* AirPlaneStrokeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18722CA91DC5D54300135FC4 /* AirPlaneStrokeView.m */; };
+		381D988C9BBC2EC0159D8540 /* libPods-AirPlaneAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9778B5B8552DD73F9A80B5 /* libPods-AirPlaneAnimation.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,12 @@
 		18722C9D1DC5D2E400135FC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18722CA01DC5D2E400135FC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18722CA21DC5D2E400135FC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18722CA81DC5D54300135FC4 /* AirPlaneStrokeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPlaneStrokeView.h; sourceTree = "<group>"; };
+		18722CA91DC5D54300135FC4 /* AirPlaneStrokeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPlaneStrokeView.m; sourceTree = "<group>"; };
+		18EAD2DD1DC5D61C00545DEC /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9E00E561D0EBD6EAE40B3060 /* Pods-AirPlaneAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirPlaneAnimation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirPlaneAnimation/Pods-AirPlaneAnimation.debug.xcconfig"; sourceTree = "<group>"; };
+		BF9778B5B8552DD73F9A80B5 /* libPods-AirPlaneAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AirPlaneAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00A9FA6E3D5C4BD22EB4EFD /* Pods-AirPlaneAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirPlaneAnimation.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirPlaneAnimation/Pods-AirPlaneAnimation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381D988C9BBC2EC0159D8540 /* libPods-AirPlaneAnimation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,8 @@
 			children = (
 				18722C901DC5D2E400135FC4 /* AirPlaneAnimation */,
 				18722C8F1DC5D2E400135FC4 /* Products */,
+				7AE0F4C645AA7753415FED1E /* Pods */,
+				A555A1A463980F4EAC5331E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +73,8 @@
 				18722C951DC5D2E400135FC4 /* AppDelegate.m */,
 				18722C971DC5D2E400135FC4 /* ViewController.h */,
 				18722C981DC5D2E400135FC4 /* ViewController.m */,
+				18722CA81DC5D54300135FC4 /* AirPlaneStrokeView.h */,
+				18722CA91DC5D54300135FC4 /* AirPlaneStrokeView.m */,
 				18722C9A1DC5D2E400135FC4 /* Main.storyboard */,
 				18722C9D1DC5D2E400135FC4 /* Assets.xcassets */,
 				18722C9F1DC5D2E400135FC4 /* LaunchScreen.storyboard */,
@@ -75,8 +88,26 @@
 			isa = PBXGroup;
 			children = (
 				18722C921DC5D2E400135FC4 /* main.m */,
+				18EAD2DD1DC5D61C00545DEC /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7AE0F4C645AA7753415FED1E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E00E561D0EBD6EAE40B3060 /* Pods-AirPlaneAnimation.debug.xcconfig */,
+				C00A9FA6E3D5C4BD22EB4EFD /* Pods-AirPlaneAnimation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A555A1A463980F4EAC5331E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF9778B5B8552DD73F9A80B5 /* libPods-AirPlaneAnimation.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +117,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18722CA51DC5D2E400135FC4 /* Build configuration list for PBXNativeTarget "AirPlaneAnimation" */;
 			buildPhases = (
+				381857D4FD02AD9E75223D9D /* [CP] Check Pods Manifest.lock */,
 				18722C8A1DC5D2E300135FC4 /* Sources */,
 				18722C8B1DC5D2E300135FC4 /* Frameworks */,
 				18722C8C1DC5D2E300135FC4 /* Resources */,
+				A7548A14DD52789B253B0FAD /* [CP] Embed Pods Frameworks */,
+				60CD90633B1F781500E0621D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +180,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		381857D4FD02AD9E75223D9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		60CD90633B1F781500E0621D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirPlaneAnimation/Pods-AirPlaneAnimation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7548A14DD52789B253B0FAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirPlaneAnimation/Pods-AirPlaneAnimation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18722C8A1DC5D2E300135FC4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -153,6 +235,7 @@
 			files = (
 				18722C991DC5D2E400135FC4 /* ViewController.m in Sources */,
 				18722C961DC5D2E400135FC4 /* AppDelegate.m in Sources */,
+				18722CAA1DC5D54300135FC4 /* AirPlaneStrokeView.m in Sources */,
 				18722C931DC5D2E400135FC4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,9 +354,11 @@
 		};
 		18722CA61DC5D2E400135FC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E00E561D0EBD6EAE40B3060 /* Pods-AirPlaneAnimation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VT6HKJNGDV;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/AirPlaneAnimation/PrefixHeader.pch";
 				INFOPLIST_FILE = AirPlaneAnimation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bear.AirPlaneAnimation;
@@ -283,9 +368,11 @@
 		};
 		18722CA71DC5D2E400135FC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C00A9FA6E3D5C4BD22EB4EFD /* Pods-AirPlaneAnimation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VT6HKJNGDV;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/AirPlaneAnimation/PrefixHeader.pch";
 				INFOPLIST_FILE = AirPlaneAnimation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bear.AirPlaneAnimation;
@@ -312,6 +399,7 @@
 				18722CA71DC5D2E400135FC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

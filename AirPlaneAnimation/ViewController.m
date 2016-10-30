@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AirPlaneStrokeView.h"
 
 @interface ViewController ()
 
@@ -16,9 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self createUI];
 }
 
+- (void)createUI
+{
+    AirPlaneStrokeView *airPlaneStrokeView = [[AirPlaneStrokeView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+    airPlaneStrokeView.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:airPlaneStrokeView];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
