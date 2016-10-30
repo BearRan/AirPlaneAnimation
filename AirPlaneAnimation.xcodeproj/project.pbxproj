@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1812E8D71DC5DB730003CCDF /* BearBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812E8D61DC5DB730003CCDF /* BearBezierPath.m */; };
 		18722C931DC5D2E400135FC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18722C921DC5D2E400135FC4 /* main.m */; };
 		18722C961DC5D2E400135FC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18722C951DC5D2E400135FC4 /* AppDelegate.m */; };
 		18722C991DC5D2E400135FC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18722C981DC5D2E400135FC4 /* ViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1812E8D51DC5DB730003CCDF /* BearBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BearBezierPath.h; sourceTree = "<group>"; };
+		1812E8D61DC5DB730003CCDF /* BearBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BearBezierPath.m; sourceTree = "<group>"; };
 		18722C8E1DC5D2E400135FC4 /* AirPlaneAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirPlaneAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18722C921DC5D2E400135FC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18722C941DC5D2E400135FC4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 				18722C981DC5D2E400135FC4 /* ViewController.m */,
 				18722CA81DC5D54300135FC4 /* AirPlaneStrokeView.h */,
 				18722CA91DC5D54300135FC4 /* AirPlaneStrokeView.m */,
+				1812E8D51DC5DB730003CCDF /* BearBezierPath.h */,
+				1812E8D61DC5DB730003CCDF /* BearBezierPath.m */,
 				18722C9A1DC5D2E400135FC4 /* Main.storyboard */,
 				18722C9D1DC5D2E400135FC4 /* Assets.xcassets */,
 				18722C9F1DC5D2E400135FC4 /* LaunchScreen.storyboard */,
@@ -235,6 +240,7 @@
 			files = (
 				18722C991DC5D2E400135FC4 /* ViewController.m in Sources */,
 				18722C961DC5D2E400135FC4 /* AppDelegate.m in Sources */,
+				1812E8D71DC5DB730003CCDF /* BearBezierPath.m in Sources */,
 				18722CAA1DC5D54300135FC4 /* AirPlaneStrokeView.m in Sources */,
 				18722C931DC5D2E400135FC4 /* main.m in Sources */,
 			);
