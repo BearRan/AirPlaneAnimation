@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AirPlaneStrokeView.h"
 #import "BgGradientView.h"
+#import "TopBarGradientView.h"
 
 @interface ViewController ()
 
@@ -29,6 +30,10 @@
     BgGradientView *bgGradientView = [[BgGradientView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
     bgGradientView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:bgGradientView];
+    
+    TopBarGradientView *topBarGradientView = [[TopBarGradientView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 180)];
+    topBarGradientView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:topBarGradientView];
     
     AirPlaneStrokeView *airPlaneStrokeView = [[AirPlaneStrokeView alloc] initWithWidth:WIDTH];
     airPlaneStrokeView.backgroundColor = [UIColor clearColor];
