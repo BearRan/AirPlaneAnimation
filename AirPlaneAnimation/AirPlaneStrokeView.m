@@ -9,7 +9,10 @@
 #import "AirPlaneStrokeView.h"
 #import "BearBezierPath.h"
 
-@interface AirPlaneStrokeView ()
+static NSString *__kAirPlaneStrokeLeftAnimation = @"__kAirPlaneStrokeLeftAnimation";
+static NSString *__kAirPlaneStrokeRightAnimation = @"__kAirPlaneStrokeRightAnimation";
+
+@interface AirPlaneStrokeView () <CAAnimationDelegate>
 {
     CAShapeLayer *_airPlaneLeftShapeLayer;
     CAShapeLayer *_airPlaneRightShapeLayer;
@@ -61,27 +64,53 @@
     return self;
 }
 
+
+#pragma mark - ShowAnimation
 - (void)showAirPlaneLeftLayerAniamtion
 {
     CABasicAnimation *strokeEnd = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     
+    strokeEnd.delegate = self;
     strokeEnd.fromValue = [NSNumber numberWithFloat:0];
     strokeEnd.toValue = [NSNumber numberWithFloat:1];
     strokeEnd.duration = _animationDuring;
-    [_airPlaneLeftShapeLayer addAnimation:strokeEnd forKey:@"airPlaneLeftAnimation"];
+    [_airPlaneLeftShapeLayer addAnimation:strokeEnd forKey:__kAirPlaneStrokeLeftAnimation];
 }
 
 - (void)showAirPlaneRightLayerAniamtion
 {
     CABasicAnimation *strokeEnd = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     
+//    strokeEnd.delegate = self;
     strokeEnd.fromValue = [NSNumber numberWithFloat:0];
     strokeEnd.toValue = [NSNumber numberWithFloat:1];
     strokeEnd.duration = _animationDuring;
-    [_airPlaneRightShapeLayer addAnimation:strokeEnd forKey:@"airPlaneRightAnimation"];
+    [_airPlaneRightShapeLayer addAnimation:strokeEnd forKey:__kAirPlaneStrokeRightAnimation];
 }
 
 
+#pragma mark - Animation Delegate
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    if ([_delegate respondsToSelector:@selector(strokeAnimationFinished)]) {
+        [_delegate strokeAnimationFinished];
+    }
+    
+//    if ([_airPlaneLeftShapeLayer animationForKey:__kAirPlaneStrokeLeftAnimation] == anim) {
+//        
+//        NSLog(@"__kAirPlaneStrokeLeftAnimation");
+//        if ([_delegate respondsToSelector:@selector(strokeAnimationFinished)]) {
+//            [_delegate strokeAnimationFinished];
+//        }
+//    }else if ([_airPlaneRightShapeLayer animationForKey:__kAirPlaneStrokeRightAnimation] == anim) {
+//        
+//        NSLog(@"--__kAirPlaneStrokeRightAnimation");
+//    }
+}
+
+
+#pragma mark - AirPlane Path
 - (CGPathRef)airPlaneLeftPath
 {
     BearBezierPath* pathPath = BearBezierPath.bezierPath;

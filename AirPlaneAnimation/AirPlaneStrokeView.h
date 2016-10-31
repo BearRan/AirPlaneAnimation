@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AirPlaneStrokeDelegate <NSObject>
+
+- (void)strokeAnimationFinished;
+
+@end
+
 @interface AirPlaneStrokeView : UIView
+
+@property (weak, nonatomic) id<AirPlaneStrokeDelegate> delegate;
 
 - (instancetype)initWithWidth:(CGFloat)width;
 

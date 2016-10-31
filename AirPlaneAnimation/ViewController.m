@@ -11,7 +11,10 @@
 #import "BgGradientView.h"
 #import "TopBarGradientView.h"
 
-@interface ViewController ()
+@interface ViewController () <AirPlaneStrokeDelegate>
+{
+    AirPlaneStrokeView *_airPlaneStrokeView;
+}
 
 @end
 
@@ -35,11 +38,37 @@
     topBarGradientView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:topBarGradientView];
     
-    AirPlaneStrokeView *airPlaneStrokeView = [[AirPlaneStrokeView alloc] initWithWidth:WIDTH];
-    airPlaneStrokeView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:airPlaneStrokeView];
+    _airPlaneStrokeView = [[AirPlaneStrokeView alloc] initWithWidth:WIDTH];
+    _airPlaneStrokeView.delegate = self;
+    _airPlaneStrokeView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:_airPlaneStrokeView];
     
-    [airPlaneStrokeView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+    [_airPlaneStrokeView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+}
+
+- (void)airPlaneStrokeScaleAniamte
+{
+    NSLog(@"frame1:%@", NSStringFromCGRect(_airPlaneStrokeView.frame));
+    [UIView animateWithDuration:2.0 animations:^{
+        _airPlaneStrokeView.transform = CGAffineTransformScale(_airPlaneStrokeView.transform, 2.0, 2.0);
+    } completion:^(BOOL finished) {
+        
+        NSLog(@"frame2:%@", NSStringFromCGRect(_airPlaneStrokeView.frame));
+        [UIView animateWithDuration:3.0 animations:^{
+            _airPlaneStrokeView.transform = CGAffineTransformScale(_airPlaneStrokeView.transform, 3.0, 3.0);
+        } completion:^(BOOL finished) {
+            
+            NSLog(@"frame3:%@", NSStringFromCGRect(_airPlaneStrokeView.frame));
+            nil;
+        }];
+    }];
+}
+
+#pragma mark - AirPlaneStrokeDelegate
+- (void)strokeAnimationFinished
+{
+    NSLog(@"--airPlaneStrokeScaleAniamte");
+    [self airPlaneStrokeScaleAniamte];
 }
 
 - (void)didReceiveMemoryWarning {
